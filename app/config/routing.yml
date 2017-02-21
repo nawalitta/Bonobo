@@ -1,0 +1,11 @@
+bonobo_bonobo:
+    resource: "@BonoboBundle/Controller/BonoboController.php"
+    type:     annotation
+
+bonobo:
+    resource: "@BonoboBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

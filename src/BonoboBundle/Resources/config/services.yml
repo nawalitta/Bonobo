@@ -1,0 +1,4 @@
+services:
+#    bonobo.example:
+#        class: BonoboBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

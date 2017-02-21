@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Bonobos list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Age</th>
+                <th>Famille</th>
+                <th>Race</th>
+                <th>Nouriture</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for bonobo in bonobos %}
+            <tr>
+                <td><a href="{{ path('bonobo_show', { 'id': bonobo.id }) }}">{{ bonobo.id }}</a></td>
+                <td>{{ bonobo.age }}</td>
+                <td>{{ bonobo.famille }}</td>
+                <td>{{ bonobo.race }}</td>
+                <td>{{ bonobo.nouriture }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('bonobo_show', { 'id': bonobo.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('bonobo_edit', { 'id': bonobo.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('bonobo_new') }}">Create a new bonobo</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Bonobo</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ bonobo.id }}</td>
+            </tr>
+            <tr>
+                <th>Age</th>
+                <td>{{ bonobo.age }}</td>
+            </tr>
+            <tr>
+                <th>Famille</th>
+                <td>{{ bonobo.famille }}</td>
+            </tr>
+            <tr>
+                <th>Race</th>
+                <td>{{ bonobo.race }}</td>
+            </tr>
+            <tr>
+                <th>Nouriture</th>
+                <td>{{ bonobo.nouriture }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('bonobo_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('bonobo_edit', { 'id': bonobo.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
